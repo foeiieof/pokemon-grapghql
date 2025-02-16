@@ -1,0 +1,48 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Attack {
+  name: String!
+  type: String!
+  damage: Float!
+}
+
+type PokemonEvolutionRequirement {
+  amount: Float!
+  name: String!
+}
+
+type PokemonAttack {
+  fast: [Attack!]
+  special: [Attack!]
+}
+
+type PokemonDimension {
+  minimum: String!
+  maximum: String!
+}
+
+type Pokemon {
+  id: String!
+  number: String!
+  name: String!
+  weight: PokemonDimension!
+  height: PokemonDimension!
+  classification: String!
+  types: [String!]
+  resistant: [String!]
+  attacks: PokemonAttack!
+  weaknesses: [String!]
+  fleeRate: Float!
+  maxCP: Float!
+  evolutions: [Pokemon!]
+  evolutionRequirements: PokemonEvolutionRequirement!
+  maxHP: Float!
+  image: String!
+}
+
+type Query {
+  pokemons(first: Float!): [Pokemon!]!
+  pokemon(id: String, name: String): Pokemon!
+}
