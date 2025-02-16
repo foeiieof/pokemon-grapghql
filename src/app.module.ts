@@ -8,7 +8,9 @@ dotenv.config();
 @Module({
   imports: [GraphQLModule.forRoot<ApolloDriverConfig>({
     driver: ApolloDriver, autoSchemaFile: "schema.gql",
-    playground: true
+    playground: true,
+    debug: true,
+    path: '/'
   }),
     PokemonsModule
   ],

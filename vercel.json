@@ -1,19 +1,17 @@
-{
+ {
   "version": 2,
-  "builds": [
-    {
-      "src": "dist/main.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "dist/main.js"
+      "src": "/",
+      "status": 307,
+      "headers": { "Location": "/graphql" }
     },
     {
       "src": "/graphql",
       "dest": "dist/main.js"
-    }, 
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/main.js"
+    }
   ]
-}
