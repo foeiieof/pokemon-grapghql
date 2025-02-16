@@ -10,7 +10,7 @@ dotenv.config();
     driver: ApolloDriver, autoSchemaFile: "schema.gql",
     playground: true,
     debug: true,
-    path: '/'
+    path: '/graphql'
   }),
     PokemonsModule
   ],
