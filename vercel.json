@@ -9,12 +9,14 @@
   ],
   "routes": [
     {
-      "src": "/graphql",
-      "dest": "/dist/main.js"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/dist/main.js"
+      "dest": "src/main.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH"
+      ]
     }
   ]
 }
